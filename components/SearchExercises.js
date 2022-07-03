@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
+import HorizontalSliderCard from "./HorizontalSliderCard";
 
-function SearchExercises() {
+function SearchExercises({ bodyPart, setExercises, setBodyPart }) {
   const [search, setSearch] = useState("");
-  const [exercise, setExercise] = useState([]);
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
     const fetchDataKategori = async () => {
-      const BodyPartsData = fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises",
+      const BodyPartsData = await fetchData(
+        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
         exerciseOptions
       );
       setBodyParts(["all", ...BodyPartsData]);
@@ -42,7 +42,7 @@ function SearchExercises() {
       <h1 className="text-4xl font-bold text-center leading-[3rem]">
         Awesome Exercises You <br></br>Should Know
       </h1>
-      <form className="flex  m-w-2xl mx-auto items-center  ">
+      <form className="flex  max-w-xl mx-auto items-center  ">
         <input
           type="text"
           value={search}
@@ -57,6 +57,11 @@ function SearchExercises() {
           search
         </button>
       </form>
+      <HorizontalSliderCard
+        data={bodyParts}
+        bodyPart={bodyPart}
+        setBodyPart={setBodyPart}
+      />
     </div>
   );
 }

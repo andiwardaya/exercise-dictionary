@@ -9,13 +9,13 @@ const HeroBanner = () => {
           Sweat, Smile <br></br>and Repeat
         </h1>
         <p className="text-gray-500">Check out the most effective exercises</p>
-        <button className="red-button">EXPLORE MORE</button>
+        <button className="red-button ">EXPLORE MORE</button>
         <p className="text-9xl text-red-500 opacity-30 md:text-[8rem] font-bold">
           Exercises
         </p>
       </div>
       <img
-        className="hidden md:inline w-[30rem] absolute right-[13rem] top-0 "
+        className="hidden xl:inline w-[30rem] absolute right-[13rem] top-0 "
         src="assets/images/banner.png"
       />
     </div>

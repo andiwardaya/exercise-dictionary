@@ -1,9 +1,16 @@
 import Head from "next/head";
+import { useState } from "react";
+import Exercises from "../components/Exercises";
+import Exercise from "../components/Exercises";
 import HeroBanner from "../components/HeroBanner";
 import Navbar from "../components/Navbar";
 import SearchExercises from "../components/SearchExercises";
 
 export default function Home() {
+  const [bodyPart, setBodyPart] = useState("all");
+  const [exercises, setExercises] = useState([]);
+
+  console.log(bodyPart);
   return (
     <div className="max-w-6xl mx-auto py-6 px-5 overflow-x-hidden border border-red-400">
       <Head>
@@ -15,7 +22,16 @@ export default function Home() {
       <main>
         <Navbar />
         <HeroBanner />
-        <SearchExercises />
+        <SearchExercises
+          setExercises={setExercises}
+          bodyPart={bodyPart}
+          setBodyPart={setBodyPart}
+        />
+        <Exercises
+          setExercises={setExercises}
+          bodyPart={bodyPart}
+          setBodyPart={setBodyPart}
+        />
       </main>
     </div>
   );
