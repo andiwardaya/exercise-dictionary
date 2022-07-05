@@ -10,7 +10,6 @@ export default function Home() {
   const [bodyPart, setBodyPart] = useState("all");
   const [exercises, setExercises] = useState([]);
 
-  console.log(bodyPart);
   return (
     <div className="max-w-6xl mx-auto py-6 px-5 overflow-x-hidden border border-red-400">
       <Head>
@@ -30,7 +29,7 @@ export default function Home() {
         <Exercises
           setExercises={setExercises}
           bodyPart={bodyPart}
-          setBodyPart={setBodyPart}
+          exercises={exercises}
         />
       </main>
     </div>

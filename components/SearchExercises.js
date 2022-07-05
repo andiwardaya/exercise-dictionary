@@ -5,6 +5,7 @@ import HorizontalSliderCard from "./HorizontalSliderCard";
 function SearchExercises({ bodyPart, setExercises, setBodyPart }) {
   const [search, setSearch] = useState("");
   const [bodyParts, setBodyParts] = useState([]);
+  const [hasil, setHasil] = useState([]);
 
   useEffect(() => {
     const fetchDataKategori = async () => {
@@ -32,11 +33,11 @@ function SearchExercises({ bodyPart, setExercises, setBodyPart }) {
           exercise.bodyPart.toLowerCase().includes(search)
       );
       setSearch("");
-      setExercise(pencarianExercisses);
+      setExercises(pencarianExercisses);
+      window.scrollTo({ top: 1150, behavior: "smooth" });
     }
   };
 
-  console.log(bodyParts);
   return (
     <div className="pt-20 space-y-10 md:pt-36">
       <h1 className="text-4xl font-bold text-center leading-[3rem]">
