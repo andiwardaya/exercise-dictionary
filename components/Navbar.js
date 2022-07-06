@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="flex space-x-12 items-end">
+    <div className="flex space-x-12 items-end bg-slate-900">
       <img src="assets/images/Logo.png" />
       <div>
         <ul className="flex space-x-2">

@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import HorizontalSliderCard from "./HorizontalSliderCard";
 
-function SearchExercises({ bodyPart, setExercises, setBodyPart }) {
+function SearchExercises({
+  bodyPart,
+  setExercises,
+  setBodyPart,
+  bigDataExercises,
+}) {
   const [search, setSearch] = useState("");
   const [bodyParts, setBodyParts] = useState([]);
-  const [hasil, setHasil] = useState([]);
 
+  // DATA KATEGORI SLIDER
   useEffect(() => {
     const fetchDataKategori = async () => {
       const BodyPartsData = await fetchData(
         "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
         exerciseOptions
       );
-      setBodyParts(["all", ...BodyPartsData]);
+      setBodyParts(BodyPartsData);
     };
     fetchDataKategori();
   }, []);
@@ -21,11 +26,7 @@ function SearchExercises({ bodyPart, setExercises, setBodyPart }) {
   const handleSearch = async (e) => {
     e.preventDefault();
     if (search) {
-      const exerciseData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises",
-        exerciseOptions
-      );
-      const pencarianExercisses = exerciseData.filter(
+      const pencarianExercisses = bigDataExercises.filter(
         (exercise) =>
           exercise.name.toLowerCase().includes(search) ||
           exercise.target.toLowerCase().includes(search) ||
@@ -37,9 +38,9 @@ function SearchExercises({ bodyPart, setExercises, setBodyPart }) {
       window.scrollTo({ top: 1150, behavior: "smooth" });
     }
   };
-
+  console.log(bodyParts);
   return (
-    <div className="pt-20 space-y-10 md:pt-36">
+    <div className="pt-20 space-y-10 md:pt-36 bg-slate-500">
       <h1 className="text-4xl font-bold text-center leading-[3rem]">
         Awesome Exercises You <br></br>Should Know
       </h1>

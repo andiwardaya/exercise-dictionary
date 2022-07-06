@@ -3,7 +3,7 @@ import { exerciseOptions, fetchData } from "../utils/fetchData";
 import CardExercises from "./CardExercises";
 import Pagination from "./Pagination";
 
-function Exercises({ exercises, bodyPart, setExercises }) {
+function Exercises({ exercises, bodyPart, setExercises, bigDataExercises }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
 
@@ -20,26 +20,37 @@ function Exercises({ exercises, bodyPart, setExercises }) {
 
   // fetch ketika bodypart berubah
   useEffect(() => {
-    const fetchExercisesData = async () => {
+    // const fetchExercisesData = async () => {
+    //   let exercisesData = [];
+    //   if (bodyPart === "all") {
+    //     exercisesData = await fetchData(
+    //       "https://exercisedb.p.rapidapi.com/exercises",
+    //       exerciseOptions
+    //     );
+    //   } else if (bodyPart === "") {
+    //     console.log("choose category");
+    //   } else {
+    //     exercisesData = await fetchData(
+    //       `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
+    //       exerciseOptions
+    //     );
+    //   }
+    const filterBigData = () => {
       let exercisesData = [];
-      if (bodyPart === "all") {
-        exercisesData = await fetchData(
-          "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
-          exerciseOptions
-        );
-      } else {
-        exercisesData = await fetchData(
-          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
-          exerciseOptions
-        );
+      if (bodyPart.length > 0) {
+        exercisesData = bigDataExercises.filter((obj) => {
+          return obj.bodyPart === bodyPart;
+        });
       }
       setExercises(exercisesData);
     };
 
-    fetchExercisesData();
+    filterBigData();
+    setExercises;
   }, [bodyPart]);
 
   console.log(exercises);
+  console.log(bodyPart);
   return (
     <div>
       <h1 className="text-2xl text-center font-bold">Showing Result</h1>

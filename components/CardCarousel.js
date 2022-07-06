@@ -1,6 +1,6 @@
 import React from "react";
 
-function CardCarousel({ item, bodyPart, setBodyPart }) {
+function CardCarousel({ item, setBodyPart }) {
   return (
     <div
       onClick={() => {

@@ -4,7 +4,7 @@ import React from "react";
 function CardExercises({ exercise }) {
   return (
     <div className="border border-gray-200 rounded-xl p-5 cursor-pointer hover:shadow-xl ">
-      <Link href="/">
+      <Link href={`/exercises/${exercise.id}`}>
         <div>
           <img
             className="w-28 h-28 md:w-60 md:h-60"

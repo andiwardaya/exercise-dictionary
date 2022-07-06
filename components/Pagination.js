@@ -6,7 +6,7 @@ function Pagination({ postsPerPage, totalPosts, paginate, currentPage }) {
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
-  console.log(pageNumbers);
+
   return (
     <div className="py-2">
       <div>

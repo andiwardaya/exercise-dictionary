@@ -2,8 +2,8 @@ import React from "react";
 
 const HeroBanner = () => {
   return (
-    <div className="">
-      <div className="flex flex-col items-start justify-center space-y-4 pt-28 relative border border-green-400 ">
+    <>
+      <div className="flex flex-col items-start justify-center space-y-4 pt-28 relative border bg-slate-600 ">
         <h2 className="font-bold text-2xl text-red-500">Fitness Club</h2>
         <h1 className="font-bold text-5xl ">
           Sweat, Smile <br></br>and Repeat
@@ -18,7 +18,7 @@ const HeroBanner = () => {
         className="hidden xl:inline w-[30rem] absolute right-[13rem] top-0 "
         src="assets/images/banner.png"
       />
-    </div>
+    </>
   );
 };
 
