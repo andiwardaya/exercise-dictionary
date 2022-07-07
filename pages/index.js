@@ -39,7 +39,7 @@ export default function Home({ bigDataExercises }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const bodyPartDatas = await fetchData(
     "https://exercisedb.p.rapidapi.com/exercises",
     exerciseOptions

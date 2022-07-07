@@ -3,8 +3,8 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="flex space-x-12 items-end bg-slate-900">
-      <img src="assets/images/Logo.png" />
+    <div className="flex space-x-12 items-end ">
+      <img src="/assets/images/Logo.png" />
       <div>
         <ul className="flex space-x-2">
           <li>
