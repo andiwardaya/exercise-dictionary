@@ -2,7 +2,6 @@ import React from "react";
 
 function Detail({ dynamicBodyData }) {
   const { bodyPart, gifUrl, name, target, equipment } = dynamicBodyData;
-  console.log(dynamicBodyData);
 
   const imageDetail = [
     {
@@ -26,6 +25,7 @@ function Detail({ dynamicBodyData }) {
     <div className="py-10 space-y-6 md:flex">
       <img
         src={gifUrl}
+        loading="lazy"
         className="mx-auto w-[20rem] h-[20rem] md:w-[26rem] md:h-[26rem] border border-gray-300 p-3  rounded-lg shadow-md hover:shadow-xl shadow-red-300 hover:shadow-red-300"
       />
       {/* DESCRIPTION */}

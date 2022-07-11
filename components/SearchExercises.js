@@ -38,7 +38,7 @@ function SearchExercises({
       window.scrollTo({ top: 1150, behavior: "smooth" });
     }
   };
-  console.log(bodyParts);
+
   return (
     <div className="pt-20 space-y-10 md:pt-36 bg-slate-500">
       <h1 className="text-4xl font-bold text-center leading-[3rem]">

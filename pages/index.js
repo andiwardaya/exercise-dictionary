@@ -8,9 +8,9 @@ import SearchExercises from "../components/SearchExercises";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 
 export default function Home({ bigDataExercises }) {
-  const [bodyPart, setBodyPart] = useState("");
+  const [bodyPart, setBodyPart] = useState("back");
   const [exercises, setExercises] = useState([]);
-  console.log(bigDataExercises);
+
   return (
     <div className="max-w-6xl mx-auto py-6 px-5 overflow-x-hidden border bg-black">
       <Head>

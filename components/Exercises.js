@@ -49,8 +49,6 @@ function Exercises({ exercises, bodyPart, setExercises, bigDataExercises }) {
     setExercises;
   }, [bodyPart]);
 
-  console.log(exercises);
-  console.log(bodyPart);
   return (
     <div>
       <h1 className="text-2xl text-center font-bold">Showing Result</h1>

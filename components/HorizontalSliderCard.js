@@ -4,7 +4,6 @@ import "react-multi-carousel/lib/styles.css";
 import CardCarousel from "./CardCarousel";
 
 function HorizontalSliderCard({ data, bodyPart, setBodyPart }) {
-  console.log(data);
   return (
     <div>
       <div
