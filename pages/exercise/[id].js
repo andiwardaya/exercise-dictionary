@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Detail from "../../components/Detail";
 import ExerciseVideo from "../../components/ExerciseVideo";
-import SimiliarVideo from "../../components/SimiliarVideo";
 import Navbar from "../../components/Navbar";
 import {
   exerciseOptions,
@@ -13,19 +12,24 @@ function exerciseDetail(dynamicBodyData) {
   // const [exercisesDetail, setExercisesDetail] = useState({ dynamicBodyData });
   const [exerciseVideoData, setExerciseVideoData] = useState([]);
 
+  const { bodyPart, gifUrl, name, target, equipment } =
+    dynamicBodyData.dynamicBodyData;
+
   const nameExercise = dynamicBodyData.dynamicBodyData.name;
 
   useEffect(() => {
     const youtubeSearchUrl =
       "https://youtube-search-and-download.p.rapidapi.com";
-    const fetchVideo = async () => {
+    const exercisesDBurl = "https://exercisedb.p.rapidapi.com";
+
+    const fetchExercises = async () => {
       const exerciseVideoData = await fetchData(
         `${youtubeSearchUrl}/search?query=${nameExercise}`,
         youtubeOptions
       );
       setExerciseVideoData(exerciseVideoData.contents);
     };
-    fetchVideo();
+    fetchExercises();
   }, []);
 
   return (
@@ -36,7 +40,6 @@ function exerciseDetail(dynamicBodyData) {
         name={nameExercise}
         exerciseVideoData={exerciseVideoData}
       />
-      <SimiliarVideo />
     </div>
   );
 }

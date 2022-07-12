@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 
 function ExerciseVideo({ name, exerciseVideoData }) {
-  console.log(exerciseVideoData);
   const truncate = (input) =>
     input?.length > 20 ? `${input.substring(0, 40)}...` : input;
 

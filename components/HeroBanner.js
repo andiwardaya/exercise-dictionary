@@ -3,7 +3,7 @@ import React from "react";
 const HeroBanner = () => {
   return (
     <>
-      <div className="flex flex-col items-start justify-center space-y-4 pt-28 relative border bg-slate-600 ">
+      <div className="flex flex-col items-start justify-center space-y-4 pt-28 relative  ">
         <h2 className="font-bold text-2xl text-red-500">Fitness Club</h2>
         <h1 className="font-bold text-5xl ">
           Sweat, Smile <br></br>and Repeat

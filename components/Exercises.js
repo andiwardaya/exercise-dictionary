@@ -52,7 +52,7 @@ function Exercises({ exercises, bodyPart, setExercises, bigDataExercises }) {
   return (
     <div>
       <h1 className="text-2xl text-center font-bold">Showing Result</h1>
-      <div className="flex flex-row flex-wrap gap-5  border border-green-300 items-center justify-center py-5">
+      <div className="flex flex-row flex-wrap gap-5   items-center justify-center py-5">
         {currentExercises.map((exercise, index) => (
           <CardExercises key={index} exercise={exercise} />
         ))}
