@@ -8,12 +8,8 @@ import {
   youtubeOptions,
 } from "../../utils/fetchData";
 
-function exerciseDetail(dynamicBodyData) {
-  // const [exercisesDetail, setExercisesDetail] = useState({ dynamicBodyData });
+function ExerciseDetail(dynamicBodyData) {
   const [exerciseVideoData, setExerciseVideoData] = useState([]);
-
-  const { bodyPart, gifUrl, name, target, equipment } =
-    dynamicBodyData.dynamicBodyData;
 
   const nameExercise = dynamicBodyData.dynamicBodyData.name;
 
@@ -44,7 +40,7 @@ function exerciseDetail(dynamicBodyData) {
   );
 }
 
-export default exerciseDetail;
+export default ExerciseDetail;
 
 export async function getServerSideProps({ params: { id } }) {
   const dynamicBodyData = await fetchData(

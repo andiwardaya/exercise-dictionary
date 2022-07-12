@@ -20,6 +20,7 @@ function ExerciseVideo({ name, exerciseVideoData }) {
               key={index}
               href={`https://www.youtube.com/watch?v=${item.video.videoId}`}
               target="_blank"
+              rel="noopener"
               className="p-4 border border-gray-200 rounded-md hover:shadow-xl"
             >
               <Image
